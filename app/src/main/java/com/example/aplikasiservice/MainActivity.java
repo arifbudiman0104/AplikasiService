@@ -50,19 +50,10 @@ public class MainActivity extends AppCompatActivity {
                 else if (mJamRadio.getId()==mRadioID) {mChangeTime=60*60;}
 
                 Intent mService = new Intent(MainActivity.this, WallpaperChangeService.class);
-
-                /* membuat bundle dna menyimpan pasangan nilai dengan kuncinya*/
-
                 Bundle mBundleTime = new Bundle();
                 mBundleTime.putInt("durasi", mChangeTime);
-
-                //Menaruh bundle kedalam intent
                 mService.putExtras(mBundleTime);
-
-                //memulai service
                 startService(mService);
-
-                //mengakhiri activity
                 finish();
             }
         });
